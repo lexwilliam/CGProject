@@ -48,15 +48,15 @@
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Wall.cpp">
+    <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.vert">
+    <None Include="wall.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="default.frag">
+    <None Include="wall.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="shaderClass.h">
@@ -72,12 +72,6 @@
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="light.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="ceiling.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="ceiling.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
@@ -97,7 +91,7 @@
     <ClInclude Include="Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
+    <ClInclude Include="Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -115,6 +109,9 @@
       <Filter>Resource Files\Texture</Filter>
     </Image>
     <Image Include="..\..\..\..\Downloads\woodenFloor.jpg">
+      <Filter>Resource Files\Texture</Filter>
+    </Image>
+    <Image Include="whiteConcreteWall.jpg">
       <Filter>Resource Files\Texture</Filter>
     </Image>
   </ItemGroup>

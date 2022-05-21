@@ -156,13 +156,11 @@
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="VAO.cpp" />
     <ClCompile Include="VBO.cpp" />
-    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ceiling.frag" />
-    <None Include="ceiling.vert" />
-    <None Include="default.frag" />
-    <None Include="default.vert" />
+    <None Include="wall.frag" />
+    <None Include="wall.vert" />
     <None Include="floor.frag" />
     <None Include="floor.vert" />
     <None Include="light.frag" />
@@ -175,7 +173,7 @@
     <ClInclude Include="Texture.h" />
     <ClInclude Include="VAO.h" />
     <ClInclude Include="VBO.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="Mesh.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\..\Downloads\brick.png" />
@@ -183,6 +181,7 @@
     <Image Include="..\..\..\..\Downloads\whiteBrickWall.png" />
     <Image Include="..\..\..\..\Downloads\whitewall.png" />
     <Image Include="..\..\..\..\Downloads\woodenFloor.jpg" />
+    <Image Include="whiteConcreteWall.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

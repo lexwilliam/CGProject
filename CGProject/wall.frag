@@ -40,7 +40,7 @@ vec4 defaultLight()
 	float specAmount = pow(max(dot(viewDirection, reflectionDirection), 0.0f), 8);
 	float specular = specAmount * specularLight;
 
-	return (texture(tex0, texCoord) * lightColor * (diffuse + ambient + specular));
+	return (texture(tex0, texCoord) * lightColor * (diffuse + ambient));
 }
 
 

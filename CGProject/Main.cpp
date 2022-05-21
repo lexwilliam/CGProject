@@ -1,17 +1,4 @@
-#include<iostream>
-#include<glad/glad.h>
-#include<GLFW/glfw3.h>
-#include<stb/stb_image.h>
-#include<glm/glm.hpp>
-#include<glm/gtc/matrix_transform.hpp>
-#include<glm/gtc/type_ptr.hpp>
-
-#include"Texture.h"
-#include"shaderClass.h"
-#include"VAO.h"
-#include"VBO.h"
-#include"EBO.h"
-#include"Camera.h"
+#include"Mesh.h"
 
 
 const unsigned int width = 800;
@@ -19,27 +6,27 @@ const unsigned int height = 800;
 
 
 // Vertices coordinates
-GLfloat wallVertices[] =
-{ //     COORDINATES		/        COLORS		  /   TexCoord    /	   NORMAL		//
-	-30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Left 0
-	-30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Left 1
-	-30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Left 2
-	-30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Left 3
-		
-	-30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Back 4
-	 30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Back 5
-	 30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Back 6
-	-30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Back 7
+Vertex wallVertices[] =
+{ //					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord				//
+	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Left 0
+	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Left 1
+	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Left 2
+	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Left 3
 
-	 30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Front 8
-	-30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Front 9
-	-30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Front 10
-	 30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Front 11
+	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Back 4
+	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Back 5
+	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Back 6
+	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Back 7
 
-	 30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Right 12
-	 30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 2.0f,		1.0f, 1.0f,	 1.0f,				// Right 13
-	 30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,		1.0f, 1.0f,	 1.0f,				// Right 14
-	 30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	2.0f, 0.0f,		1.0f, 1.0f,	 1.0f				// Right 15
+	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Front 8
+	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Front 9
+	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Front 10
+	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Front 11
+
+	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Right 12
+	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Right 13
+	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Right 14
+	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Right 15
 };
 
 
@@ -58,31 +45,37 @@ GLuint wallIndices[] =
 };
 
 
-GLfloat floorVertices[] =
-{	//     COORDINATES     /        COLORS				/   TexCoord  //
-	-30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 3.0f, // 0
-	-30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f, // 1
-	 30.0f, -10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	3.0f, 0.0f, // 2
-	 30.0f, -10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	3.0f, 3.0f, // 3
+Vertex floorVertices[] =
+{	//					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord		//
+	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 0
+	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 1
+	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 2
+	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 3
+
+	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 4
+	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 5
+	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 6
+	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 7
 };
 
 GLuint floorIndices[] =
 {
 	0, 1, 2, 
-	0, 3, 2
+	0, 3, 2,
+	4, 5, 6,
+	4, 7, 6
 };
 
-
-GLfloat lightVertices[] =
+Vertex lightVertices[] =
 { //     COORDINATES     //
-	-0.03f, -0.03f,  0.03f,
-	-0.03f, -0.03f, -0.03f,
-	 0.03f, -0.03f, -0.03f,
-	 0.03f, -0.03f,  0.03f,
-	-0.03f,  0.03f,  0.03f,
-	-0.03f,  0.03f, -0.03f,
-	 0.03f,  0.03f, -0.03f,
-	 0.03f,  0.03f,  0.03f
+	Vertex{glm::vec3(-0.5f, -0.5f,  0.5f)},
+	Vertex{glm::vec3(-0.5f, -0.5f, -0.5f)},
+	Vertex{glm::vec3(0.5f, -0.5f, -0.5f)},
+	Vertex{glm::vec3(0.5f, -0.5f,  0.5f)},
+	Vertex{glm::vec3(-0.5f,  0.5f,  0.5f)},
+	Vertex{glm::vec3(-0.5f,  0.5f, -0.5f)},
+	Vertex{glm::vec3(0.5f,  0.5f, -0.5f)},
+	Vertex{glm::vec3(0.5f,  0.5f,  0.5f)}
 };
 
 GLuint lightIndices[] =
@@ -99,19 +92,6 @@ GLuint lightIndices[] =
 	1, 4, 0,
 	4, 5, 6,
 	4, 6, 7
-};
-
-GLfloat ceilingVertices[] = 
-{	//     COORDINATES     /        COLORS				/   TexCoord	//
-	-30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 3.0f,		// 0
-	-30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	0.0f, 0.0f,		// 1
-	 30.0f,  10.0f, -30.0f,     0.83f, 0.70f, 0.44f,	3.0f, 0.0f,		// 2
-	 30.0f,  10.0f,  30.0f,     0.83f, 0.70f, 0.44f,	3.0f, 3.0f,		// 3
-};
-
-GLuint ceilingIndices[] = {
-	0, 1, 2,
-	0, 3, 2
 };
 
 
@@ -146,84 +126,48 @@ int main()
 	// In this case the viewport goes from x = 0, y = 0, to x = 800, y = 800
 	glViewport(0, 0, width, height);
 
+	Texture whiteBrickTexture[]
+	{
+		Texture("whiteBrickWall.png", "diffuse", 0, GL_RGB, GL_UNSIGNED_BYTE)
+	};
+
+	Texture woodTexture[]
+	{
+		Texture("woodenFloor.jpg", "diffuse", 0, GL_RGB, GL_UNSIGNED_BYTE)
+	};
+
 	// Generates Shader object using shaders default.vert and default.frag
-	Shader shaderProgram("default.vert", "default.frag");
+	Shader wallShader("wall.vert", "wall.frag");
 
-	// Generates Vertex Array Object and binds it
-	VAO VAO1;
-	VAO1.Bind();
-	
+	std::vector <Vertex> wallVerts(wallVertices, wallVertices + sizeof(wallVertices) / sizeof(Vertex));
+	std::vector <GLuint> wallInd(wallIndices, wallIndices + sizeof(wallIndices) / sizeof(GLuint));
+	std::vector <Texture> wallTex(whiteBrickTexture, whiteBrickTexture + sizeof(whiteBrickTexture) / sizeof(Texture));
 
-	// Generates Vertex Buffer Object and links it to vertices
-	VBO VBO1(wallVertices, sizeof(wallVertices));
-	// Generates Element Buffer Object and links it to indices
-	EBO EBO1(wallIndices, sizeof(wallIndices));
-
-	// Links VBO attributes such as coordinates and colors to VAO
-	VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 11 * sizeof(float), (void*)0);
-	VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 11 * sizeof(float), (void*)(3 * sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 11 * sizeof(float), (void*)(6 * sizeof(float)));
-	VAO1.LinkAttrib(VBO1, 3, 3, GL_FLOAT, 11 * sizeof(float), (void*)(8 * sizeof(float)));
-
-	// Unbind all to prevent accidentally modifying them
-	VAO1.Unbind();
-	VBO1.Unbind();
-	EBO1.Unbind();
-
-	Texture brickTex("brick.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGBA, GL_UNSIGNED_BYTE);
-	brickTex.texUnit(shaderProgram, "tex0", 0);
+	Mesh wall(wallVerts, wallInd, wallTex);
 
 	// Floor
-	Shader shaderProgram2("floor.vert", "floor.frag");
-	VAO VAO2;
-	VAO2.Bind();
-	VBO VBO2(floorVertices, sizeof(floorVertices));
-	EBO EBO2(floorIndices, sizeof(floorIndices));
-	VAO2.LinkAttrib(VBO2, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
-	VAO2.LinkAttrib(VBO2, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-	VAO2.LinkAttrib(VBO2, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	VAO2.Unbind();
-	VBO2.Unbind();
-	EBO2.Unbind();
-
-	Texture woodenTex("woodenFloor.jpg", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
-	woodenTex.texUnit(shaderProgram2, "tex0", 0);
+	Shader floorShader("floor.vert", "floor.frag");
 	
-	// Ceiling
-	Shader ceilingShader("ceiling.vert", "ceiling.frag");
-	VAO ceilingVAO;
-	ceilingVAO.Bind();
-	VBO ceilingVBO(ceilingVertices, sizeof(ceilingVertices));
-	EBO ceilingEBO(ceilingIndices, sizeof(ceilingIndices));
-	ceilingVAO.LinkAttrib(ceilingVBO, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
-	ceilingVAO.LinkAttrib(ceilingVBO, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
-	ceilingVAO.LinkAttrib(ceilingVBO, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
-	ceilingVAO.Unbind();
-	ceilingVBO.Unbind();
-	ceilingEBO.Unbind();
+	std::vector <Vertex> floorVerts(floorVertices, floorVertices + sizeof(floorVertices) / sizeof(Vertex));
+	std::vector <GLuint> floorInd(floorIndices, floorIndices + sizeof(floorIndices) / sizeof(GLuint));
+	std::vector <Texture> floorTex(woodTexture, woodTexture + sizeof(woodTexture) / sizeof(Texture));
 
-	Texture whiteWall("whitewall.png", GL_TEXTURE_2D, GL_TEXTURE0, GL_RGBA, GL_UNSIGNED_BYTE);
-	whiteWall.texUnit(ceilingShader, "tex0", 0);
+	Mesh floor(floorVerts, floorInd, floorTex);
 
 	
 	// Shader for light cube
 	Shader lightShader("light.vert", "light.frag");
-	// Generates Vertex Array Object and binds it
-	VAO lightVAO;
-	lightVAO.Bind();
-	// Generates Vertex Buffer Object and links it to vertices
-	VBO lightVBO(lightVertices, sizeof(lightVertices));
-	// Generates Element Buffer Object and links it to indices
-	EBO lightEBO(lightIndices, sizeof(lightIndices));
-	// Links VBO attributes such as coordinates and colors to VAO
-	lightVAO.LinkAttrib(lightVBO, 0, 3, GL_FLOAT, 3 * sizeof(float), (void*)0);
-	// Unbind all to prevent accidentally modifying them
-	lightVAO.Unbind();
-	lightVBO.Unbind();
-	lightEBO.Unbind();
+	// Store mesh data in vectors for the mesh
+	std::vector <Vertex> lightVerts(lightVertices, lightVertices + sizeof(lightVertices) / sizeof(Vertex));
+	std::vector <GLuint> lightInd(lightIndices, lightIndices + sizeof(lightIndices) / sizeof(GLuint));
+	// Crate light mesh
+	Mesh light(lightVerts, lightInd, wallTex);
+
+
+
 
 	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-	glm::vec3 lightPos = glm::vec3(0.0f, 1.0f, 0.0f);
+	glm::vec3 lightPos = glm::vec3(0.0f, 8.0f, 0.0f);
 	glm::mat4 lightModel = glm::mat4(1.0f);
 	lightModel = glm::translate(lightModel, lightPos);
 
@@ -234,10 +178,15 @@ int main()
 	lightShader.Activate();
 	glUniformMatrix4fv(glGetUniformLocation(lightShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(lightModel));
 	glUniform4f(glGetUniformLocation(lightShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-	shaderProgram.Activate();
-	glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "model"), 1, GL_FALSE, glm::value_ptr(roomModel));
-	glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-	glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+	wallShader.Activate();
+	glUniformMatrix4fv(glGetUniformLocation(wallShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(roomModel));
+	glUniform4f(glGetUniformLocation(wallShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+	glUniform3f(glGetUniformLocation(wallShader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+	floorShader.Activate();
+	glUniformMatrix4fv(glGetUniformLocation(floorShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(roomModel));
+	glUniform4f(glGetUniformLocation(floorShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+	glUniform3f(glGetUniformLocation(floorShader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
@@ -252,60 +201,16 @@ int main()
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		// Clean the back buffer and depth buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+
 		// Handles camera inputs
 		camera.Inputs(window);
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
-
-		// Tell OpenGL which Shader Program we want to use
-		shaderProgram.Activate();
-		// Exports the camera Position to the Fragment Shader for specular lighting
-		glUniform3f(glGetUniformLocation(shaderProgram.ID, "camPos"), camera.Position.x, camera.Position.y, camera.Position.z);
-		
-		camera.Matrix(shaderProgram, "camMatrix");
-		// Binds texture so that is appears in rendering
-		brickTex.Bind();
-		// Bind the VAO so OpenGL knows to use it
-		VAO1.Bind();
-		// Draw primitives, number of indices, datatype of indices, index of indices
-		glDrawElements(GL_TRIANGLES, sizeof(wallIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
-		
-
-		// Floor
-		shaderProgram2.Activate();
-
-		camera.Matrix(shaderProgram2, "camMatrix");
-		
-		woodenTex.Bind();
-
-		VAO2.Bind();
-
-		glDrawElements(GL_TRIANGLES, sizeof(floorIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
-
-		// Ceiling
-		ceilingShader.Activate();
-
-		camera.Matrix(ceilingShader, "camMatrix");
-
-		whiteWall.Bind();
-
-		ceilingVAO.Bind();
-
-		glDrawElements(GL_TRIANGLES, sizeof(ceilingIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
-
-
-		// Light Source
-		
-		// Tells OpenGL which Shader Program we want to use
-		lightShader.Activate();
-		// Export the camMatrix to the Vertex Shader of the light cube
-		camera.Matrix(lightShader, "camMatrix");
-		// Bind the VAO so OpenGL knows to use it
-		lightVAO.Bind();
-		// Draw primitives, number of indices, datatype of indices, index of indices
-		glDrawElements(GL_TRIANGLES, sizeof(lightIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
-
+		wall.Draw(wallShader, camera);
+		floor.Draw(floorShader, camera);
+		light.Draw(lightShader, camera);
 
 		// Swap the back buffer with the front buffer
 		glfwSwapBuffers(window);
@@ -316,25 +221,9 @@ int main()
 
 
 	// Delete all the objects we've created
-	VAO1.Delete();
-	VBO1.Delete();
-	EBO1.Delete();
-	brickTex.Delete();
-	shaderProgram.Delete();
-	VAO2.Delete();
-	VBO2.Delete();
-	EBO2.Delete();
-	woodenTex.Delete();
-	shaderProgram2.Delete();
-	lightVAO.Delete();
-	lightVBO.Delete();
-	lightEBO.Delete();
+	wallShader.Delete();
+	floorShader.Delete();
 	lightShader.Delete();
-	ceilingVAO.Delete();
-	ceilingVBO.Delete();
-	ceilingEBO.Delete();
-	whiteWall.Delete();
-	ceilingShader.Delete();
 	// Delete window before ending the program
 	glfwDestroyWindow(window);
 	// Terminate GLFW before ending the program
