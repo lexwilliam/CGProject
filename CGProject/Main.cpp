@@ -1,4 +1,5 @@
-#include"Mesh.h"
+#include"Model.h"
+#include"TradMesh.h"
 
 
 const unsigned int width = 800;
@@ -8,10 +9,10 @@ const unsigned int height = 800;
 // Vertices coordinates
 Vertex wallVertices[] =
 { //					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord				//
-	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Left 0
-	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Left 1
-	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Left 2
-	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.3f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Left 3
+	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Left 0
+	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Left 1
+	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Left 2
+	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Left 3
 
 	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Back 4
 	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Back 5
@@ -109,7 +110,7 @@ int main()
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	// Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
-	GLFWwindow* window = glfwCreateWindow(width, height, "YoutubeOpenGL", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(width, height, "CGProject", NULL, NULL);
 	// Error check if the window fails to create
 	if (window == NULL)
 	{
@@ -128,12 +129,12 @@ int main()
 
 	Texture whiteBrickTexture[]
 	{
-		Texture("whiteBrickWall.png", "diffuse", 0, GL_RGB, GL_UNSIGNED_BYTE)
+		Texture("whiteBrickWall.png", "diffuse", 0)
 	};
 
 	Texture woodTexture[]
 	{
-		Texture("woodenFloor.jpg", "diffuse", 0, GL_RGB, GL_UNSIGNED_BYTE)
+		Texture("woodenFloor.jpg", "diffuse", 0)
 	};
 
 	// Generates Shader object using shaders default.vert and default.frag
@@ -143,7 +144,7 @@ int main()
 	std::vector <GLuint> wallInd(wallIndices, wallIndices + sizeof(wallIndices) / sizeof(GLuint));
 	std::vector <Texture> wallTex(whiteBrickTexture, whiteBrickTexture + sizeof(whiteBrickTexture) / sizeof(Texture));
 
-	Mesh wall(wallVerts, wallInd, wallTex);
+	TradMesh wall(wallVerts, wallInd, wallTex);
 
 	// Floor
 	Shader floorShader("floor.vert", "floor.frag");
@@ -152,19 +153,18 @@ int main()
 	std::vector <GLuint> floorInd(floorIndices, floorIndices + sizeof(floorIndices) / sizeof(GLuint));
 	std::vector <Texture> floorTex(woodTexture, woodTexture + sizeof(woodTexture) / sizeof(Texture));
 
-	Mesh floor(floorVerts, floorInd, floorTex);
+	TradMesh floor(floorVerts, floorInd, floorTex);
 
-	
+	Shader swordShader("sword.vert", "sword.frag");
+
+	Model sword("models/map/scene.gltf");
 	// Shader for light cube
 	Shader lightShader("light.vert", "light.frag");
 	// Store mesh data in vectors for the mesh
 	std::vector <Vertex> lightVerts(lightVertices, lightVertices + sizeof(lightVertices) / sizeof(Vertex));
 	std::vector <GLuint> lightInd(lightIndices, lightIndices + sizeof(lightIndices) / sizeof(GLuint));
 	// Crate light mesh
-	Mesh light(lightVerts, lightInd, wallTex);
-
-
-
+	TradMesh light(lightVerts, lightInd, wallTex);
 
 	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	glm::vec3 lightPos = glm::vec3(0.0f, 8.0f, 0.0f);
@@ -186,13 +186,16 @@ int main()
 	glUniformMatrix4fv(glGetUniformLocation(floorShader.ID, "model"), 1, GL_FALSE, glm::value_ptr(roomModel));
 	glUniform4f(glGetUniformLocation(floorShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
 	glUniform3f(glGetUniformLocation(floorShader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+	swordShader.Activate();
+	glUniform4f(glGetUniformLocation(swordShader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+	glUniform3f(glGetUniformLocation(swordShader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 
 
 	// Enables the Depth Buffer
 	glEnable(GL_DEPTH_TEST);
 
 	// Creates camera object
-	Camera camera(width, height, glm::vec3(0.0f, 0.0f, 0.0f));
+	Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
 	// Main while loop
 	while (!glfwWindowShouldClose(window))
@@ -208,9 +211,10 @@ int main()
 		// Updates and exports the camera matrix to the Vertex Shader
 		camera.updateMatrix(45.0f, 0.1f, 100.0f);
 
+		light.Draw(lightShader, camera);
 		wall.Draw(wallShader, camera);
 		floor.Draw(floorShader, camera);
-		light.Draw(lightShader, camera);
+		sword.Draw(swordShader, camera);
 
 		// Swap the back buffer with the front buffer
 		glfwSwapBuffers(window);
