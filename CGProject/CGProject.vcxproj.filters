@@ -74,6 +74,12 @@
     <None Include="light.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VBO.h">

@@ -159,6 +159,8 @@
     <ClCompile Include="VBO.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.frag" />
+    <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.vert" />
     <None Include="wall.frag" />
     <None Include="wall.vert" />
     <None Include="floor.frag" />
