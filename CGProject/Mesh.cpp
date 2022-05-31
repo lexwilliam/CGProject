@@ -20,7 +20,7 @@ Mesh::Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, std::v
 	EBO.Unbind();
 }
 
-void Mesh::Draw(Shader& shader, Camera& camera)
+void Mesh::Draw(Shader& shader, Camera& camera, glm::mat4 model, glm::vec4 lightColor, glm::vec3 lightPos)
 {
 	// Bind shader to be able to access uniforms
 	shader.Activate();
@@ -45,6 +45,11 @@ void Mesh::Draw(Shader& shader, Camera& camera)
 		textures[i].texUnit(shader, (type + num).c_str(), i);
 		textures[i].Bind();
 	}
+
+	glUniformMatrix4fv(glGetUniformLocation(shader.ID, "model"), 1, GL_FALSE, glm::value_ptr(model));
+	glUniform4f(glGetUniformLocation(shader.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+	glUniform3f(glGetUniformLocation(shader.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+
 	// Take care of the camera Matrix
 	glUniform3f(glGetUniformLocation(shader.ID, "camPos"), camera.Position.x, camera.Position.y, camera.Position.z);
 	camera.Matrix(shader, "camMatrix");

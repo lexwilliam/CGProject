@@ -1,5 +1,5 @@
-#ifndef TRAD_MESH_CLASS_H
-#define TRAD_MESH_CLASS_H
+#ifndef MESH_CLASS_H
+#define MESH_CLASS_H
 
 #include<string>
 
@@ -19,7 +19,7 @@ public:
 
 	Mesh(std::vector <Vertex>& vertices, std::vector <GLuint>& indices, std::vector <Texture>& textures);
 
-	void Draw(Shader& shader, Camera& camera);
+	void Draw(Shader& shader, Camera& camera, glm::mat4 model, glm::vec4 lightColor, glm::vec3 lightPos);
 };
 
 #endif

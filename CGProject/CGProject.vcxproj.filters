@@ -51,6 +51,12 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="objClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="wall.vert">
@@ -80,6 +86,36 @@
     <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+    <None Include="wardrobe.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="wardrobe.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="desk.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="desk.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="windowFrame.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="windowFrame.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="couch.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="couch.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="door.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="door.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VBO.h">
@@ -98,6 +134,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="objClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Skybox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
