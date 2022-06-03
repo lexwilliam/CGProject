@@ -74,12 +74,6 @@
     <None Include="floor.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="light.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="light.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
     <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
@@ -101,9 +95,6 @@
     <None Include="windowFrame.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="windowFrame.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
     <None Include="couch.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
@@ -114,6 +105,45 @@
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="door.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="windowFrame.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="chair.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="chair.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="bed.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="bed.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="monitor.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="monitor.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="pc.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="pc.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="rug.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="rug.frag">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="dresser.vert">
+      <Filter>Resource Files\Shaders</Filter>
+    </None>
+    <None Include="dresser.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
