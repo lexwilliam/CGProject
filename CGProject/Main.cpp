@@ -2,8 +2,8 @@
 #include"objClass.h"
 #include"Skybox.h"
 
-const unsigned int width = 800;
-const unsigned int height = 800;
+const unsigned int width = 1280;
+const unsigned int height = 720;
 
 
 // Vertices coordinates
@@ -335,7 +335,7 @@ int main()
 	std::vector <GLuint> dresserInd;
 	std::vector <Texture> dresserTex(wood2Texture, wood2Texture + sizeof(wood2Texture) / sizeof(Texture));
 
-	Object dresserLoad("model/assets/dresser/DawnDresser_a_Internal.obj");
+	Object dresserLoad("model/assets/dresser/dresser.obj");
 	dresserLoad.prep(dresserVerts, dresserInd);
 
 	Mesh dresser(dresserVerts, dresserInd, dresserTex);
