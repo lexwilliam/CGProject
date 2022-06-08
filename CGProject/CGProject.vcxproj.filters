@@ -59,20 +59,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="wall.vert">
+    <None Include="default.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="wall.frag">
+    <None Include="default.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="shaderClass.h">
       <Filter>Header Files</Filter>
-    </None>
-    <None Include="floor.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="floor.frag">
-      <Filter>Resource Files\Shaders</Filter>
     </None>
     <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.frag">
       <Filter>Resource Files\Shaders</Filter>
@@ -80,70 +74,25 @@
     <None Include="..\..\opengl-tutorials\YoutubeOpenGL 19 - Cubemaps &amp; Skyboxes\skybox.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="wardrobe.vert">
+    <None Include="frameBuffer.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="wardrobe.frag">
+    <None Include="frameBuffer.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="desk.vert">
+    <None Include="shadowCubeMap.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="desk.frag">
+    <None Include="shadowCubeMap.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="windowFrame.vert">
+    <None Include="shadowCubeMap.geom">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="couch.vert">
+    <None Include="shadowMap.vert">
       <Filter>Resource Files\Shaders</Filter>
     </None>
-    <None Include="couch.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="door.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="door.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="windowFrame.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="chair.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="chair.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="bed.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="bed.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="monitor.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="monitor.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="pc.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="pc.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="rug.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="rug.frag">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="dresser.vert">
-      <Filter>Resource Files\Shaders</Filter>
-    </None>
-    <None Include="dresser.frag">
+    <None Include="shadowMap.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
   </ItemGroup>
