@@ -9,35 +9,35 @@ const unsigned int height = 800;
 // Vertices coordinates
 Vertex wallVertices[] =
 { //					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord				//
-	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Left 0
-	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Left 1
-	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Left 2
-	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Left 3
+	Vertex{glm::vec3(-250.0f,  125.0f,  250.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Left 0
+	Vertex{glm::vec3(-250.0f,  125.0f, -250.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Left 1
+	Vertex{glm::vec3(-250.0f, -100.0f, -250.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Left 2
+	Vertex{glm::vec3(-250.0f, -100.0f,  250.0f), glm::vec3(0.5,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Left 3
 
-	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)},	// Back 4
-	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)}, 	// Back 5
-	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Back 6
-	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Back 7
+	Vertex{glm::vec3(-250.0f,  125.0f, -250.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)},	// Back 4
+	Vertex{glm::vec3(250.0f,  125.0f, -250.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)}, 	// Back 5
+	Vertex{glm::vec3(250.0f, -100.0f, -250.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Back 6
+	Vertex{glm::vec3(-250.0f, -100.0f, -250.0f), glm::vec3( 0.0f,  0.0f,  0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Back 7
 
-	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Front 8
-	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Front 9
-	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Front 10
-	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Front 11
+	Vertex{glm::vec3(250.0f,  125.0f,  250.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Front 8
+	Vertex{glm::vec3(-250.0f,  125.0f,  250.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Front 9
+	Vertex{glm::vec3(-250.0f, -100.0f,  250.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Front 10
+	Vertex{glm::vec3(250.0f, -100.0f,  250.0f), glm::vec3( 0.0f,  0.0f, -0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Front 11
 
-	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Right 12
-	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Right 13
-	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Right 14
-	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Right 15
+	Vertex{glm::vec3(250.0f,  125.0f, -250.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// Right 12
+	Vertex{glm::vec3(250.0f,  125.0f,  250.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// Right 13
+	Vertex{glm::vec3(250.0f, -100.0f,  250.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// Right 14
+	Vertex{glm::vec3(250.0f, -100.0f, -250.0f), glm::vec3(-0.5f,  0.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// Right 15
 
-	Vertex{glm::vec3(-15.0f,  6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.2f, 3.2f)},		// Back-inner 16
-	Vertex{glm::vec3(-5.0f,  6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.6f, 3.2f)},		// Back-inner 17
-	Vertex{glm::vec3(-5.0f, -6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.6f, 0.8f)},		// Back-inner 18
-	Vertex{glm::vec3(-15.0f, -6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.2f, 0.8f)},		// Back-inner 19
+	Vertex{glm::vec3(-150.0f,  60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.2f, 3.2f)},		// Back-inner 16
+	Vertex{glm::vec3(-50.0f,  60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.6f, 3.2f)},		// Back-inner 17
+	Vertex{glm::vec3(-50.0f, -60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.6f, 0.8f)},		// Back-inner 18
+	Vertex{glm::vec3(-150.0f, -60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(1.2f, 0.8f)},		// Back-inner 19
 
-	Vertex{glm::vec3(-25.0f,  6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 3.2f)},		// Back-side 20
-	Vertex{glm::vec3(25.0f,  6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 3.2f)}, 		// Back-side 21
-	Vertex{glm::vec3(25.0f, -6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.8f)},		// Back-side 22
-	Vertex{glm::vec3(-25.0f, -6.0f, -25.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.8f)},		// Back-side 23
+	Vertex{glm::vec3(-250.0f,  60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 3.2f)},		// Back-side 20
+	Vertex{glm::vec3(250.0f,  60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 3.2f)}, 		// Back-side 21
+	Vertex{glm::vec3(250.0f, -60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.8f)},		// Back-side 22
+	Vertex{glm::vec3(-250.0f, -60.0f, -250.0f), glm::vec3(0.0f,  0.0f, 0.5f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.8f)},		// Back-side 23
 };
 
 
@@ -64,15 +64,15 @@ GLuint wallIndices[] =
 
 Vertex floorVertices[] =
 {	//					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord		//
-	Vertex{glm::vec3(-25.0f, -10.0f,  25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 0
-	Vertex{glm::vec3(-25.0f, -10.0f, -25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 1
-	Vertex{glm::vec3(25.0f, -10.0f, -25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 2
-	Vertex{glm::vec3(25.0f, -10.0f,  25.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 3
+	Vertex{glm::vec3(-250.0f, -100.0f,  250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 0
+	Vertex{glm::vec3(-250.0f, -100.0f, -250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 1
+	Vertex{glm::vec3(250.0f, -100.0f, -250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 2
+	Vertex{glm::vec3(250.0f, -100.0f,  250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 3
 
-	Vertex{glm::vec3(-25.0f,  10.0f,  25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 4
-	Vertex{glm::vec3(-25.0f,  10.0f, -25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 5
-	Vertex{glm::vec3(25.0f,  10.0f, -25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 6
-	Vertex{glm::vec3(25.0f,  10.0f,  25.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 7
+	Vertex{glm::vec3(-250.0f,  125.0f,  250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 4
+	Vertex{glm::vec3(-250.0f,  125.0f, -250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 5
+	Vertex{glm::vec3(250.0f,  125.0f, -250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 6
+	Vertex{glm::vec3(250.0f,  125.0f,  250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 7
 };
 
 GLuint floorIndices[] =
@@ -81,35 +81,6 @@ GLuint floorIndices[] =
 	0, 3, 2,
 	4, 5, 6,
 	4, 7, 6
-};
-
-
-Vertex lightVertices[] =
-{ //     COORDINATES     //
-	Vertex{glm::vec3(-0.5f, -0.5f,  0.5f)},
-	Vertex{glm::vec3(-0.5f, -0.5f, -0.5f)},
-	Vertex{glm::vec3(0.5f, -0.5f, -0.5f)},
-	Vertex{glm::vec3(0.5f, -0.5f,  0.5f)},
-	Vertex{glm::vec3(-0.5f,  0.5f,  0.5f)},
-	Vertex{glm::vec3(-0.5f,  0.5f, -0.5f)},
-	Vertex{glm::vec3(0.5f,  0.5f, -0.5f)},
-	Vertex{glm::vec3(0.5f,  0.5f,  0.5f)}
-};
-
-GLuint lightIndices[] =
-{
-	0, 1, 2,
-	0, 2, 3,
-	0, 4, 7,
-	0, 7, 3,
-	3, 7, 6,
-	3, 6, 2,
-	2, 6, 5,
-	2, 5, 1,
-	1, 5, 4,
-	1, 4, 0,
-	4, 5, 6,
-	4, 6, 7
 };
 
 float rectangleVertices[] =
@@ -233,7 +204,7 @@ int main()
 	std::vector <GLuint> wardrobeInd;
 	std::vector <Texture> wardrobeTex(lightWoodTexture, lightWoodTexture + sizeof(lightWoodTexture) / sizeof(Texture));
 	
-	Object wardrobeLoad("model/assets/wardrobe/scaledcabinet.obj");
+	Object wardrobeLoad("model/assets/wardrobe/wardrobe.obj");
 	wardrobeLoad.prep(wardrobeVerts, wardrobeInd);
 
 	Mesh wardrobe(wardrobeVerts, wardrobeInd, wardrobeTex);
@@ -243,7 +214,7 @@ int main()
 	std::vector <GLuint> deskInd;
 	std::vector <Texture> deskTex(lightWoodTexture, lightWoodTexture + sizeof(lightWoodTexture) / sizeof(Texture));
 
-	Object deskLoad("model/assets/desk/scaleddesk.OBJ");
+	Object deskLoad("model/assets/desk/desk.obj");
 	deskLoad.prep(deskVerts, deskInd);
 
 	Mesh desk(deskVerts, deskInd, deskTex);
@@ -253,7 +224,7 @@ int main()
 	std::vector <GLuint> windowFrameInd;
 	std::vector <Texture> windowFrameTex(windowFrameTexture, windowFrameTexture + sizeof(windowFrameTexture) / sizeof(Texture));
 
-	Object windowFrameLoad("model/assets/old-wooden-window/source/scaledwindow.obj");
+	Object windowFrameLoad("model/assets/old-wooden-window/source/windowFrame.obj");
 	windowFrameLoad.prep(windowFrameVerts, windowFrameInd);
 
 	Mesh windowFrame(windowFrameVerts, windowFrameInd, windowFrameTex);
@@ -263,7 +234,7 @@ int main()
 	std::vector <GLuint> couchInd;
 	std::vector <Texture> couchTex(couchTexture, couchTexture + sizeof(couchTexture) / sizeof(Texture));
 
-	Object couchLoad("model/assets/couch/scaledcouch.obj");
+	Object couchLoad("model/assets/couch/couch.obj");
 	couchLoad.prep(couchVerts, couchInd);
 
 	Mesh couch(couchVerts, couchInd, couchTex);
@@ -273,7 +244,7 @@ int main()
 	std::vector <GLuint> doorInd;
 	std::vector <Texture> doorTex(doorTexture, doorTexture + sizeof(doorTexture) / sizeof(Texture));
 
-	Object doorLoad("model/assets/door/source/scaleddoor.obj");
+	Object doorLoad("model/assets/door/source/door.obj");
 	doorLoad.prep(doorVerts, doorInd);
 
 	Mesh door(doorVerts, doorInd, doorTex);
@@ -283,7 +254,7 @@ int main()
 	std::vector <GLuint> chairInd;
 	std::vector <Texture> chairTex(wood2Texture, wood2Texture + sizeof(wood2Texture) / sizeof(Texture));
 
-	Object chairLoad("model/assets/chair/scaledchair.obj");
+	Object chairLoad("model/assets/chair/chair.obj");
 	chairLoad.prep(chairVerts, chairInd);
 
 	Mesh chair(chairVerts, chairInd, chairTex);
@@ -293,7 +264,7 @@ int main()
 	std::vector <GLuint> bedInd;
 	std::vector <Texture> bedTex(bedSheetTexture, bedSheetTexture + sizeof(bedSheetTexture) / sizeof(Texture));
 
-	Object bedLoad("model/assets/bed/scaledbed.obj");
+	Object bedLoad("model/assets/bed/bed.obj");
 	bedLoad.prep(bedVerts, bedInd);
 
 	Mesh bed(bedVerts, bedInd, bedTex);
@@ -303,7 +274,7 @@ int main()
 	std::vector <GLuint> monitorInd;
 	std::vector <Texture> monitorTex(blackMatteTexture, blackMatteTexture + sizeof(blackMatteTexture) / sizeof(Texture));
 
-	Object monitorLoad("model/assets/monitor/scaledmonitor.obj");
+	Object monitorLoad("model/assets/monitor/monitor.obj");
 	monitorLoad.prep(monitorVerts, monitorInd);
 
 	Mesh monitor(monitorVerts, monitorInd, monitorTex);
@@ -313,7 +284,7 @@ int main()
 	std::vector <GLuint> pcInd;
 	std::vector <Texture> pcTex(blackMatteTexture, blackMatteTexture + sizeof(blackMatteTexture) / sizeof(Texture));
 
-	Object pcLoad("model/assets/pc/scaledcpu.obj");
+	Object pcLoad("model/assets/pc/pc.obj");
 	pcLoad.prep(pcVerts, pcInd);
 
 	Mesh pc(pcVerts, pcInd, pcTex);
@@ -323,7 +294,7 @@ int main()
 	std::vector <GLuint> rugInd;
 	std::vector <Texture> rugTex(rugTexture, rugTexture + sizeof(rugTexture) / sizeof(Texture));
 
-	Object rugLoad("model/assets/rug/scaledrug.obj");
+	Object rugLoad("model/assets/rug/rug.obj");
 	rugLoad.prep(rugVerts, rugInd);
 
 	Mesh rug(rugVerts, rugInd, rugTex);
@@ -332,7 +303,7 @@ int main()
 	std::vector <GLuint> dresserInd;
 	std::vector <Texture> dresserTex(wood2Texture, wood2Texture + sizeof(wood2Texture) / sizeof(Texture));
 
-	Object dresserLoad("model/assets/dresser/scaleddresser.obj");
+	Object dresserLoad("model/assets/dresser/dresser.obj");
 	dresserLoad.prep(dresserVerts, dresserInd);
 
 	Mesh dresser(dresserVerts, dresserInd, dresserTex);
@@ -340,53 +311,53 @@ int main()
 	// SCALE, LIGHT, AND POSITION
 
 	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-	glm::vec3 lightPos = glm::vec3(0.0f, 9.0f, 0.0f);
+	glm::vec3 lightPos = glm::vec3(-200.0f, 0.0f, -450.0f);
 
 	glm::vec3 roomPos = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::mat4 roomModel = glm::mat4(1.0f);
 	roomModel = glm::translate(roomModel, roomPos);
 
-	glm::vec3 wardrobePos = glm::vec3(4.0f, -10.0f, -21.0f);
+	glm::vec3 wardrobePos = glm::vec3(40.0f, -100.0f, -210.0f);
 	glm::mat4 wardrobeModel = glm::mat4(1.0f);
 	wardrobeModel = glm::translate(wardrobeModel, wardrobePos);
 
-	glm::vec3 deskPos = glm::vec3(-21.0f, -10.0f, 0.0f);
+	glm::vec3 deskPos = glm::vec3(-210.0f, -100.0f, 0.0f);
 	glm::mat4 deskModel = glm::mat4(1.0f);
 	deskModel = glm::translate(deskModel, deskPos);
 
-	glm::vec3 windowPos = glm::vec3(-10.0f, 0.0f, -25.0f);
+	glm::vec3 windowPos = glm::vec3(-100.0f, 0.0f, -250.0f);
 	glm::mat4 windowModel = glm::mat4(1.0f);
 	windowModel = glm::translate(windowModel, windowPos);
 	
-	glm::vec3 couchPos = glm::vec3(0.0f, -10.0f, 18.0);
+	glm::vec3 couchPos = glm::vec3(0.0f, -100.0f, 180.0);
 	glm::mat4 couchModel = glm::mat4(1.0f);
 	couchModel = glm::translate(couchModel, couchPos);
 
-	glm::vec3 doorPos = glm::vec3(25.0f, 0.3f, 17.0f);
+	glm::vec3 doorPos = glm::vec3(250.0f, 3.0f, 170.0f);
 	glm::mat4 doorModel = glm::mat4(1.0f);
 	doorModel = glm::translate(doorModel, doorPos);
 
-	glm::vec3 chairPos = glm::vec3(-15.0f, -10.0f, 0.0f);
+	glm::vec3 chairPos = glm::vec3(-150.0f, -100.0f, 0.0f);
 	glm::mat4 chairModel = glm::mat4(1.0f);
 	chairModel = glm::translate(chairModel, chairPos);
 
-	glm::vec3 bedPos = glm::vec3(17.0f, -10.0f, -13.0f);
+	glm::vec3 bedPos = glm::vec3(170.0f, -100.0f, -130.0f);
 	glm::mat4 bedModel = glm::mat4(1.0f);
 	bedModel = glm::translate(bedModel, bedPos);
 
-	glm::vec3 monitorPos = glm::vec3(-21.0f, -3.5f, 0.0f);
+	glm::vec3 monitorPos = glm::vec3(-210.0f, -35.0f, 0.0f);
 	glm::mat4 monitorModel = glm::mat4(1.0f);
 	monitorModel = glm::translate(monitorModel, monitorPos);
 
-	glm::vec3 pcPos = glm::vec3(-21.0f, -3.5f, -5.0f);
+	glm::vec3 pcPos = glm::vec3(-210.0f, -35.0f, -50.0f);
 	glm::mat4 pcModel = glm::mat4(1.0f);
 	pcModel = glm::translate(pcModel, pcPos);
 
-	glm::vec3 rugPos = glm::vec3(0.0f, -10.0f, 0.0f);
+	glm::vec3 rugPos = glm::vec3(0.0f, -100.0f, 0.0f);
 	glm::mat4 rugModel = glm::mat4(1.0f);
 	rugModel = glm::translate(rugModel, rugPos);
 
-	glm::vec3 dresserPos = glm::vec3(-21.0f, -10.0f, -15.0f);
+	glm::vec3 dresserPos = glm::vec3(-210.0f, -100.0f, -150.0f);
 	glm::mat4 dresserModel = glm::mat4(1.0f);
 	dresserModel = glm::translate(dresserModel, dresserPos);
 
@@ -485,15 +456,11 @@ int main()
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	// Matrices needed for the light's perspective
-	float farPlane = 150.0f;
+	float farPlane = 1500.0f;
 	glm::mat4 orthgonalProjection = glm::ortho(-35.0f, 35.0f, -35.0f, 35.0f, 0.1f, farPlane);
 	glm::mat4 perspectiveProjection = glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, farPlane);
 	glm::mat4 lightView = glm::lookAt(lightPos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
 	glm::mat4 lightProjection = perspectiveProjection * lightView;
-
-	shadowMapProgram.Activate();
-	glUniformMatrix4fv(glGetUniformLocation(shadowMapProgram.ID, "lightProjection"), 1, GL_FALSE, glm::value_ptr(lightProjection));
-
 
 	// Framebuffer for Cubemap Shadow Map
 	unsigned int pointShadowMapFBO;
@@ -522,24 +489,8 @@ int main()
 
 	// Matrices needed for the light's perspective on all faces of the cubemap
 	glm::mat4 shadowProj = glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, farPlane);
-	glm::mat4 shadowTransforms[] =
-	{
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(1.0, 0.0, 0.0), glm::vec3(0.0, -1.0, 0.0)),
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(-1.0, 0.0, 0.0), glm::vec3(0.0, -1.0, 0.0)),
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0, 1.0, 0.0), glm::vec3(0.0, 0.0, 1.0)),
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0, -1.0, 0.0), glm::vec3(0.0, 0.0, -1.0)),
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0, 0.0, 1.0), glm::vec3(0.0, -1.0, 0.0)),
-	shadowProj * glm::lookAt(lightPos, lightPos + glm::vec3(0.0, 0.0, -1.0), glm::vec3(0.0, -1.0, 0.0))
-	};
 	// Export all matrices to shader
 	shadowCubeMapProgram.Activate();
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[0]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[0]));
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[1]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[1]));
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[2]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[2]));
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[3]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[3]));
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[4]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[4]));
-	glUniformMatrix4fv(glGetUniformLocation(shadowCubeMapProgram.ID, "shadowMatrices[5]"), 1, GL_FALSE, glm::value_ptr(shadowTransforms[5]));
-	glUniform3f(glGetUniformLocation(shadowCubeMapProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 	glUniform1f(glGetUniformLocation(shadowCubeMapProgram.ID, "farPlane"), farPlane);
 	// Creates camera object
 	Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
@@ -561,19 +512,19 @@ int main()
 		glBindFramebuffer(GL_FRAMEBUFFER, pointShadowMapFBO);
 		glClear(GL_DEPTH_BUFFER_BIT);
 
-		wall.Draw(shadowCubeMapProgram, camera, roomModel, lightColor, lightPos);
-		floor.Draw(shadowCubeMapProgram, camera, roomModel, lightColor, lightPos);
-		windowFrame.Draw(shadowCubeMapProgram, camera, windowModel, lightColor, lightPos);
-		couch.Draw(shadowCubeMapProgram, camera, couchModel, lightColor, lightPos);
-		wardrobe.Draw(shadowCubeMapProgram, camera, wardrobeModel, lightColor, lightPos);
-		desk.Draw(shadowCubeMapProgram, camera, deskModel, lightColor, lightPos);
-		chair.Draw(shadowCubeMapProgram, camera, chairModel, lightColor, lightPos);
-		door.Draw(shadowCubeMapProgram, camera, doorModel, lightColor, lightPos);
-		bed.Draw(shadowCubeMapProgram, camera, bedModel, lightColor, lightPos);
-		monitor.Draw(shadowCubeMapProgram, camera, monitorModel, lightColor, lightPos);
-		pc.Draw(shadowCubeMapProgram, camera, pcModel, lightColor, lightPos);
-		rug.Draw(shadowCubeMapProgram, camera, rugModel, lightColor, lightPos);
-		dresser.Draw(shadowCubeMapProgram, camera, dresserModel, lightColor, lightPos);
+		wall.Draw(shadowCubeMapProgram, camera, roomModel, lightColor, lightPos, shadowProj);
+		floor.Draw(shadowCubeMapProgram, camera, roomModel, lightColor, lightPos, shadowProj);
+		windowFrame.Draw(shadowCubeMapProgram, camera, windowModel, lightColor, lightPos, shadowProj);
+		couch.Draw(shadowCubeMapProgram, camera, couchModel, lightColor, lightPos, shadowProj);
+		wardrobe.Draw(shadowCubeMapProgram, camera, wardrobeModel, lightColor, lightPos, shadowProj);
+		desk.Draw(shadowCubeMapProgram, camera, deskModel, lightColor, lightPos, shadowProj);
+		chair.Draw(shadowCubeMapProgram, camera, chairModel, lightColor, lightPos, shadowProj);
+		door.Draw(shadowCubeMapProgram, camera, doorModel, lightColor, lightPos, shadowProj);
+		bed.Draw(shadowCubeMapProgram, camera, bedModel, lightColor, lightPos, shadowProj);
+		monitor.Draw(shadowCubeMapProgram, camera, monitorModel, lightColor, lightPos, shadowProj);
+		pc.Draw(shadowCubeMapProgram, camera, pcModel, lightColor, lightPos, shadowProj);
+		rug.Draw(shadowCubeMapProgram, camera, rugModel, lightColor, lightPos, shadowProj);
+		dresser.Draw(shadowCubeMapProgram, camera, dresserModel, lightColor, lightPos, shadowProj);
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		// Switch back to the default viewport
@@ -593,7 +544,7 @@ int main()
 
 		// Send the light matrix to the shader
 		shaderProgram.Activate();
-		glUniformMatrix4fv(glGetUniformLocation(shaderProgram.ID, "lightProjection"), 1, GL_FALSE, glm::value_ptr(lightProjection));
+		
 		glUniform1f(glGetUniformLocation(shaderProgram.ID, "farPlane"), farPlane);
 
 		// Bind the Shadow Map
@@ -601,19 +552,19 @@ int main()
 		glBindTexture(GL_TEXTURE_CUBE_MAP, depthCubemap);
 		glUniform1i(glGetUniformLocation(shaderProgram.ID, "shadowCubeMap"), 1);
 
-		wall.Draw(shaderProgram, camera, roomModel, lightColor, lightPos);
-		floor.Draw(shaderProgram, camera, roomModel, lightColor, lightPos);
-		windowFrame.Draw(shaderProgram, camera, windowModel, lightColor, lightPos);
-		couch.Draw(shaderProgram, camera, couchModel, lightColor, lightPos);
-		wardrobe.Draw(shaderProgram, camera, wardrobeModel, lightColor, lightPos);
-		desk.Draw(shaderProgram, camera, deskModel, lightColor, lightPos);
-		chair.Draw(shaderProgram, camera, chairModel, lightColor, lightPos);
-		door.Draw(shaderProgram, camera, doorModel, lightColor, lightPos);
-		bed.Draw(shaderProgram, camera, bedModel, lightColor, lightPos);
-		monitor.Draw(shaderProgram, camera, monitorModel, lightColor, lightPos);
-		pc.Draw(shaderProgram, camera, pcModel, lightColor, lightPos);
-		rug.Draw(shaderProgram, camera, rugModel, lightColor, lightPos);
-		dresser.Draw(shaderProgram, camera, dresserModel, lightColor, lightPos);
+		wall.Draw(shaderProgram, camera, roomModel, lightColor, lightPos, lightProjection);
+		floor.Draw(shaderProgram, camera, roomModel, lightColor, lightPos, lightProjection);
+		windowFrame.Draw(shaderProgram, camera, windowModel, lightColor, lightPos, lightProjection);
+		couch.Draw(shaderProgram, camera, couchModel, lightColor, lightPos, lightProjection);
+		wardrobe.Draw(shaderProgram, camera, wardrobeModel, lightColor, lightPos, lightProjection);
+		desk.Draw(shaderProgram, camera, deskModel, lightColor, lightPos, lightProjection);
+		chair.Draw(shaderProgram, camera, chairModel, lightColor, lightPos, lightProjection);
+		door.Draw(shaderProgram, camera, doorModel, lightColor, lightPos, lightProjection);
+		bed.Draw(shaderProgram, camera, bedModel, lightColor, lightPos, lightProjection);
+		monitor.Draw(shaderProgram, camera, monitorModel, lightColor, lightPos, lightProjection);
+		pc.Draw(shaderProgram, camera, pcModel, lightColor, lightPos, lightProjection);
+		rug.Draw(shaderProgram, camera, rugModel, lightColor, lightPos, lightProjection);
+		dresser.Draw(shaderProgram, camera, dresserModel, lightColor, lightPos, lightProjection);
 		
 		skybox.Draw(skyboxShader, camera, width, height);
 
