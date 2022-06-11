@@ -2,7 +2,7 @@
 
 Texture::Texture(const char* image, const char* texType, GLuint slot)
 {
-	// Assigns the type of the texture ot the texture object
+	// Assigns the type of the texture to the texture object
 	type = texType;
 
 	// Stores the width, height, and the number of color channels of the image

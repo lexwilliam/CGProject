@@ -311,7 +311,7 @@ int main()
 	// SCALE, LIGHT, AND POSITION
 
 	glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-	glm::vec3 lightPos = glm::vec3(-200.0f, 0.0f, -450.0f);
+	glm::vec3 lightPos = glm::vec3(-160.0f, 50.0f, -450.0f);
 
 	glm::vec3 roomPos = glm::vec3(0.0f, 0.0f, 0.0f);
 	glm::mat4 roomModel = glm::mat4(1.0f);

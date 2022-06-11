@@ -88,5 +88,5 @@ vec4 pointLight(vec3 lightPos, float intensity, float ambient){
 void main()
 {
 	// outputs final color
-	FragColor = pointLight(lightPos, 600.0f, 0.6f);
+	FragColor = pointLight(lightPos, 10.0f, 0.6f);
 }
