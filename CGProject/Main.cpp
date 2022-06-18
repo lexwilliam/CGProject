@@ -66,8 +66,8 @@ Vertex floorVertices[] =
 {	//					 COORDINATES	    /				NORMAL				/		  COLOR				 /		TexCoord		//
 	Vertex{glm::vec3(-250.0f, -100.0f,  250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 0
 	Vertex{glm::vec3(-250.0f, -100.0f, -250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 1
-	Vertex{glm::vec3(250.0f, -100.0f, -250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},	// 2
-	Vertex{glm::vec3(250.0f, -100.0f,  250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},	// 3
+	Vertex{glm::vec3(250.0f, -100.0f, -250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(0.0f, 0.0f)},		// 2
+	Vertex{glm::vec3(250.0f, -100.0f,  250.0f), glm::vec3(0.0f,  1.0f,  0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec2(4.0f, 0.0f)},		// 3
 
 	Vertex{glm::vec3(-250.0f,  125.0f,  250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(4.0f, 4.0f)},	// 4
 	Vertex{glm::vec3(-250.0f,  125.0f, -250.0f), glm::vec3(0.0f, -1.0f,  0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec2(0.0f, 4.0f)}, 	// 5
