@@ -1,3 +1,8 @@
+// Made by:
+// Öì³±Ñî-1820202032	
+// Îâ¼ÎÍş - 1820202042
+// Â¬¹úÃ÷ - 1820202036
+
 #include"Mesh.h"
 #include"objClass.h"
 #include"Skybox.h"
